@@ -5,7 +5,6 @@ import {
   extractDates,
   convertToCSVOption2,
 } from "./../../utils/index";
-import { Gift, ArrowLeft, DownloadIcon } from "lucide-react-native"; // Replace with React Native icons
 import {
   View,
   Text,
@@ -20,6 +19,8 @@ import * as FileSystem from "expo-file-system";
 import * as Sharing from "expo-sharing";
 import XLSX from "xlsx";
 import { ALERT_TYPE, Toast } from "react-native-alert-notification";
+import Icon from '@expo/vector-icons/Feather'
+
 
 const formatDate = (dateStr) => {
   if (!dateStr) return "";
@@ -83,7 +84,7 @@ const BirthdayCalendar: React.FC = () => {
   if (error) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Gift style={{ width: 48, height: 48 }} color={"#ff0000"} />
+        <Icon name="gift" size={48} color={"#ff0000"} />
         <Text style={{ fontSize: 18, fontWeight: "bold" }}>
           Oops! Something went wrong
         </Text>
@@ -196,7 +197,7 @@ const BirthdayCalendar: React.FC = () => {
                 onPress={() => router.push("/")}
                 style={{ marginRight: 10 }}
               >
-                <ArrowLeft color={"black"} width={30} height={30} />
+                <Icon name="arrow-left" color={"black"} size={30} />
               </TouchableOpacity>
               <Text
                 style={{
@@ -224,10 +225,9 @@ const BirthdayCalendar: React.FC = () => {
               disabled={isLoading}
               onPress={() => generateAndShareExcel(users)}
             >
-              <DownloadIcon
+              <Icon name="download"
                 color={"#343a40"}
-                width={30}
-                height={30}
+                size={24}
                 style={{ marginRight: 10 }}
               />
               <Text style={{ color: "#343a40" }}>Export Data</Text>

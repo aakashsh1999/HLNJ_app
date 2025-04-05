@@ -12,7 +12,6 @@ import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { TouchableOpacity, View } from "react-native";
-import { CalendarCheck, CalendarRangeIcon } from "lucide-react-native";
 import { Button, PaperProvider } from "react-native-paper";
 import { AlertNotificationRoot } from "react-native-alert-notification";
 
@@ -59,7 +58,7 @@ export default function RootLayout() {
               }}
             />
           </Stack>
-          <StatusBar style="auto" />
+          <StatusBar style="light" />
         </ThemeProvider>
       </AlertNotificationRoot>
     </PaperProvider>

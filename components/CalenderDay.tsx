@@ -2,9 +2,9 @@ import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { format, isToday } from "date-fns";
 import { BirthdayEvent } from "../utils/index";
-import { Heart, Cake, Gift, CakeIcon, HeartIcon } from "lucide-react-native"; // Use equivalent React Native icons
 import UUID from "react-native-uuid";
 import { Card } from "react-native-paper";
+import Icon from '@expo/vector-icons/Feather'
 
 interface CalendarDayProps {
   date: Date;
@@ -88,7 +88,7 @@ const CalendarDay: React.FC<CalendarDayProps> = ({ day, events }) => {
           {events.birthdays.map((name, index) => (
             <View key={`${index}-${UUID.v4()}`} style={styles.eventItem}>
               <View style={styles.eventDetails}>
-                <Gift color={"#fff"} width={24} height={24} />
+                <Icon name="gift" color={"#fff"} size={20}/>
 
                 <Text style={styles.eventName}>{name}</Text>
               </View>
@@ -124,7 +124,7 @@ const CalendarDay: React.FC<CalendarDayProps> = ({ day, events }) => {
               style={[styles.eventItem, { backgroundColor: "#C6005C" }]}
             >
               <View style={styles.eventDetails}>
-                <HeartIcon color={"#fff"} width={24} height={24} />
+                <Icon name="heart" color={"#fff"} size={20} />
 
                 <Text style={styles.eventName}>{name}</Text>
               </View>
@@ -133,52 +133,7 @@ const CalendarDay: React.FC<CalendarDayProps> = ({ day, events }) => {
         </View>
       ) : null}
 
-      {/* {events.length > 0 ? (
-        <View style={styles.eventsContainer}>
-          {events.map((event) => (
-            <View key={`${event}-${UUID.v4()}`} style={styles.eventItem}>
-              <View style={styles.eventDetails}>
-                <Text style={styles.eventName}>{event.name}</Text>
-                <View style={styles.eventInfo}>
-                  {event.relation.includes("Anniversary") ? (
-                    <Heart style={styles.icon} />
-                  ) : (
-                    <Cake style={styles.icon} />
-                  )}
-                  <Text style={styles.eventRelation}>
-                    {event.relation.includes("Anniversary")
-                      ? event.relation
-                      : `${event.relation} · Turns ${event.age}`}
-                  </Text>
-                  <Text style={styles.dot}>•</Text>
-                  <Text style={styles.eventDate}>
-                    {format(event.originalDate, "MMM d, yyyy")}
-                  </Text>
-                </View>
-              </View>
 
-              <View
-                style={[
-                  styles.iconBox,
-                  event.relation.includes("Anniversary")
-                    ? styles.anniversaryBox
-                    : styles.birthdayBox,
-                ]}
-              >
-                {event.relation.includes("Anniversary") ? (
-                  <Heart style={styles.icon} />
-                ) : (
-                  <Gift style={styles.icon} />
-                )}
-              </View>
-            </View>
-          ))}
-        </View>
-      ) : (
-        <View style={styles.noEvents}>
-          <Text style={styles.noEventsText}>No events today</Text>
-        </View>
-      )} */}
     </Card>
   );
 };

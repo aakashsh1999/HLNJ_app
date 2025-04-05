@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { ArrowLeft, ArrowRight } from "lucide-react-native";
+import Icon from '@expo/vector-icons/Feather'
 
 interface NavigationButtonsProps {
   onPrevious?: () => void;
@@ -35,7 +35,7 @@ const NavigationButtons = ({
             isPreviousDisabled && styles.disabledButton,
           ]}
         >
-          <ArrowLeft
+          <Icon name="arrow-left"
             size={16}
             color={isPreviousDisabled ? "#A0A0A0" : "#333"}
           />
@@ -87,7 +87,7 @@ const NavigationButtons = ({
           >
             Next
           </Text>
-          <ArrowRight size={16} color={isNextDisabled ? "#A0A0A0" : "#FFF"} />
+          <Icon name="arrow-right" size={16} color={isNextDisabled ? "#A0A0A0" : "#FFF"} />
         </TouchableOpacity>
       )}
     </View>

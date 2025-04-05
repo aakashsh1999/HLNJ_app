@@ -1,12 +1,13 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { Clock } from "lucide-react-native";
+import Icon from '@expo/vector-icons/Feather'
+
 
 const EventCard = ({ event }) => {
   return (
     <TouchableOpacity key={event.id} style={styles.card} activeOpacity={0.7}>
       <View style={styles.row}>
-        <Clock size={20} color="#4F46E5" /> {/* Indigo-600 */}
+        <Icon name="clock" size={20} color="#4F46E5" /> {/* Indigo-600 */}
         <View style={styles.content}>
           <View style={styles.header}>
             <Text style={styles.title}>{event.title}</Text>

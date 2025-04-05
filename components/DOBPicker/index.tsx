@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TouchableOpacity, View, Text } from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-import { Calendar1 } from "lucide-react-native";
+import Icon from '@expo/vector-icons/Feather'
 
 const DatePickerComponent = ({ initialDate, onDateSelected, title }) => {
   const [date, setDate] = useState(initialDate);
@@ -48,7 +48,7 @@ const DatePickerComponent = ({ initialDate, onDateSelected, title }) => {
           <Text>No Date Selected</Text>
         )}
         <TouchableOpacity onPress={toggleDatePicker}>
-          <Calendar1 color={"black"} />
+          <Icon name='calendar' color={"black"} />
         </TouchableOpacity>
         <DateTimePickerModal
           date={date}

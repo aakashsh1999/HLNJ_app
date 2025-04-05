@@ -9,8 +9,7 @@ import {
 import { useRouter } from "expo-router";
 import React from "react";
 
-import { CalendarCheck } from "lucide-react-native";
-
+import Icon from '@expo/vector-icons/Feather';
 import PersonalDetailsForm from "@/components/card/Form";
 
 function HomeScreen() {
@@ -18,29 +17,7 @@ function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Image
-          style={styles.image}
-          source={require("../assets/images/logo.jpg")}
-        />
-      </View>
-      <View style={styles.welcomeContainer}>
-        <Text style={styles.welcome}>Welcome</Text>
-        <TouchableOpacity
-          onPress={() => router.push("/events")}
-          style={{
-            backgroundColor: "#FFFFFB",
-            elevation: 8,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "50%",
-            padding: 8,
-          }}
-        >
-          <CalendarCheck color={"#FF6B6C"} width={30} height={30} />
-        </TouchableOpacity>
-      </View>
-
+     
       <PersonalDetailsForm />
     </SafeAreaView>
   );

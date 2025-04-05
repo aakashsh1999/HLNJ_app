@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   container: {
-    alignSelf: "center",
+    
     // maxWidth: 400,
   },
   title: {
